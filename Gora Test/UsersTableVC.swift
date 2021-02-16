@@ -70,9 +70,8 @@ class UsersTableVC: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let title = users[indexPath.row].name else { return }
-        guard let id = users[indexPath.row].id else { return }
-        pushAlbumsVC(title: title, id: id)
+        
+        pushAlbumsVC(title: users[indexPath.row].name, id: users[indexPath.row].id)
     }
     
     func pushAlbumsVC(title: String, id: Int) {

@@ -26,7 +26,6 @@ class PhotoCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getPhotos()
-//        downloadPhotos()
     }
     
     func getPhotos() {
@@ -42,15 +41,13 @@ class PhotoCollectionViewController: UICollectionViewController {
                 for photo in photos{
                     if photo.albumId == self.id {
                         self.photos.append(photo)
-//                        self.downloadPhoto(with: photo.url!)
                     }
                 }
                 print("photos in album: \(self.photos.count)")
-//                print("images: \(self.images.count)")
-                                DispatchQueue.main.async {
-                                    self.collectionView.reloadData()
-                                }
-
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+                
                 
             case .failure(let error):
                 print(error.localizedDescription)
@@ -58,24 +55,6 @@ class PhotoCollectionViewController: UICollectionViewController {
             }
         }
         
-    }
-    
-    func downloadPhoto(with url: String) {
-        
-        
-           
-                NetworkManager.shared.downloadImage(from: url) { [weak self] (image) in
-                    guard let self = self, let image = image else { return }
-                    self.images.append(image)
-                }
-            
-        
-        
-        
-        
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-        }
     }
     
     
@@ -87,25 +66,20 @@ class PhotoCollectionViewController: UICollectionViewController {
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
         return photos.count
     }
     
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustomCollectionViewCell
-        
-        // Configure the cell
-        
-        //
-        
-        cell.load(from: photos[indexPath.item].url!)
+   
+        cell.loadImageFrom(url: photos[indexPath.item].url)
         cell.label.text = photos[indexPath.item].title
         
         return cell
     }
-    
-    
 }
+
 
 extension PhotoCollectionViewController: UICollectionViewDelegateFlowLayout {
     // 1

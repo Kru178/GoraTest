@@ -90,8 +90,7 @@ class AlbumsTableVC: UITableViewController {
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let title = albums[indexPath.row].title else { return }
-        pushPhotosVC(title: title)
+        pushPhotosVC(title: albums[indexPath.row].title)
     }
     
     func pushPhotosVC(title: String) {
