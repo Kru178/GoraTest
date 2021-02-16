@@ -13,6 +13,5 @@ struct Photo: Codable {
     var id: Int?
     var title: String?
     var url: String?
-    var thumbnailUrl: String?
       
 }

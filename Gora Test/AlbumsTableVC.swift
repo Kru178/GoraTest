@@ -53,6 +53,7 @@ class AlbumsTableVC: UITableViewController {
                         self.albums.append(album)
                     }
                 }
+                print("albums for user: \(self.albums.count)")
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -94,7 +95,8 @@ class AlbumsTableVC: UITableViewController {
     }
     
     func pushPhotosVC(title: String) {
-        let vc = storyboard?.instantiateViewController(identifier: "photosVC") as? PhotosCollectionVC
+        let vc = storyboard?.instantiateViewController(identifier: "photosVC") as? PhotoCollectionViewController
+        vc?.id = self.id
         show(vc!, sender: nil)
     }
 

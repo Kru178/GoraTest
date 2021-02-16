@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		786EC50325DAFD9100DC66CA /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786EC50225DAFD9100DC66CA /* PhotoCollectionViewController.swift */; };
+		786EC50625DAFE8100DC66CA /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786EC50525DAFE8100DC66CA /* CustomCollectionViewCell.swift */; };
 		7883123525DA9C4500934CBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7883123425DA9C4500934CBB /* AppDelegate.swift */; };
 		7883123725DA9C4500934CBB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7883123625DA9C4500934CBB /* SceneDelegate.swift */; };
 		7883123E25DA9C4900934CBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7883123D25DA9C4900934CBB /* Assets.xcassets */; };
 		7883124125DA9C4900934CBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7883123F25DA9C4900934CBB /* LaunchScreen.storyboard */; };
 		7883125025DA9DD200934CBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7883124F25DA9DD200934CBB /* Main.storyboard */; };
-		7883125725DA9E8400934CBB /* PhotosCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7883125625DA9E8400934CBB /* PhotosCollectionVC.swift */; };
 		7883125E25DA9F4C00934CBB /* UsersTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7883125D25DA9F4C00934CBB /* UsersTableVC.swift */; };
 		7883126225DAA51F00934CBB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7883126125DAA51F00934CBB /* NetworkManager.swift */; };
 		7883126525DAA5E400934CBB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7883126425DAA5E400934CBB /* User.swift */; };
@@ -23,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		786EC50225DAFD9100DC66CA /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		786EC50525DAFE8100DC66CA /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		7883123125DA9C4500934CBB /* Gora Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gora Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7883123425DA9C4500934CBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7883123625DA9C4500934CBB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,7 +33,6 @@
 		7883124025DA9C4900934CBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7883124225DA9C4900934CBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7883124F25DA9DD200934CBB /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		7883125625DA9E8400934CBB /* PhotosCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionVC.swift; sourceTree = "<group>"; };
 		7883125D25DA9F4C00934CBB /* UsersTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableVC.swift; sourceTree = "<group>"; };
 		7883126125DAA51F00934CBB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7883126425DAA5E400934CBB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -73,9 +75,10 @@
 				7883123425DA9C4500934CBB /* AppDelegate.swift */,
 				7883123625DA9C4500934CBB /* SceneDelegate.swift */,
 				7883124F25DA9DD200934CBB /* Main.storyboard */,
+				786EC50525DAFE8100DC66CA /* CustomCollectionViewCell.swift */,
+				786EC50225DAFD9100DC66CA /* PhotoCollectionViewController.swift */,
 				7883125D25DA9F4C00934CBB /* UsersTableVC.swift */,
 				7883126F25DAAC9C00934CBB /* AlbumsTableVC.swift */,
-				7883125625DA9E8400934CBB /* PhotosCollectionVC.swift */,
 				7883126125DAA51F00934CBB /* NetworkManager.swift */,
 				7883126A25DAA76000934CBB /* GError.swift */,
 				7883126425DAA5E400934CBB /* User.swift */,
@@ -161,13 +164,14 @@
 				7883127025DAAC9C00934CBB /* AlbumsTableVC.swift in Sources */,
 				7883126225DAA51F00934CBB /* NetworkManager.swift in Sources */,
 				7883125E25DA9F4C00934CBB /* UsersTableVC.swift in Sources */,
-				7883125725DA9E8400934CBB /* PhotosCollectionVC.swift in Sources */,
 				7883127525DAB5F600934CBB /* Photo.swift in Sources */,
 				7883123525DA9C4500934CBB /* AppDelegate.swift in Sources */,
+				786EC50325DAFD9100DC66CA /* PhotoCollectionViewController.swift in Sources */,
 				7883123725DA9C4500934CBB /* SceneDelegate.swift in Sources */,
 				7883126525DAA5E400934CBB /* User.swift in Sources */,
 				7883126B25DAA76000934CBB /* GError.swift in Sources */,
 				7883126825DAA5F000934CBB /* Album.swift in Sources */,
+				786EC50625DAFE8100DC66CA /* CustomCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
