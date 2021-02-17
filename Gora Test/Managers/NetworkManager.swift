@@ -126,11 +126,11 @@ class NetworkManager {
         task.resume()
     }
     
+    
     func loadImage(from urlString: String, completed: @escaping (UIImage?) -> Void) {
         let cacheKey = NSString(string: urlString)
         
         if let image = cache.object(forKey: cacheKey) {
-            print("cache rules everything around me")
             completed(image)
             return
         }
@@ -151,10 +151,8 @@ class NetworkManager {
                 return
             }
             self.cache.setObject(image, forKey: cacheKey)
-            print("downloading...")
             completed(image)
         }
         task.resume()
     }
-    
 }

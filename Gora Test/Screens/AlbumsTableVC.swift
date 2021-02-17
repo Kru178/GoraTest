@@ -59,14 +59,18 @@ class AlbumsTableVC: UITableViewController {
         return cell
     }
     
+    // MARK: - Table view delegate
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         pushPhotosVC(albumId: albums[indexPath.row].id)
     }
     
     func pushPhotosVC(albumId: Int) {
         let vc = storyboard?.instantiateViewController(identifier: "photosVC") as? PhotoCollectionViewController
-        vc?.albumId = albumId
-        print("id passing: \(albumId)")
-        show(vc!, sender: nil)
+        guard let destinationVC = vc else { return }
+        
+        destinationVC.albumId = albumId
+
+        show(destinationVC, sender: nil)
     }
 }

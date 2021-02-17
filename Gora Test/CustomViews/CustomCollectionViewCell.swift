@@ -9,12 +9,10 @@ import UIKit
 
 class CustomCollectionViewCell: UICollectionViewCell {
     
-    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
     
     override func layoutSubviews() {
         
@@ -35,7 +33,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
         loadingView.isHidden = false
         activityIndicator.startAnimating()
         
-        NetworkManager.shared.loadImage(from: url) { (image) in
+        NetworkManager.shared.loadImage(from: url) { [weak self] (image) in
+            guard let self = self else { return }
             DispatchQueue.main.async {
                 self.activityIndicator.stopAnimating()
                 UIView.animate(withDuration: 1.0) {

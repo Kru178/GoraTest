@@ -33,7 +33,6 @@ class UsersTableVC: UITableViewController {
             case .failure(let error):
                 print(error.localizedDescription)
             }
-            
         }
     }
     
@@ -55,6 +54,8 @@ class UsersTableVC: UITableViewController {
         return cell
     }
     
+    // MARK: - Table view delegate
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         pushAlbumsVC(title: users[indexPath.row].name, id: users[indexPath.row].id)
@@ -62,8 +63,11 @@ class UsersTableVC: UITableViewController {
     
     func pushAlbumsVC(title: String, id: Int) {
         let vc = storyboard?.instantiateViewController(identifier: "albumsVC") as? AlbumsTableVC
-        vc?.id = id
-        vc?.title = title
-        show(vc!, sender: nil)
+        
+        guard let destinationVC = vc else { return }
+        destinationVC.id = id
+        destinationVC.title = title
+        
+        show(destinationVC, sender: nil)
     }
 }
