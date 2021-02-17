@@ -11,7 +11,7 @@ private let reuseIdentifier = "cell"
 
 class PhotoCollectionViewController: UICollectionViewController {
     
-    var id: Int?
+    var albumId: Int?
     var photos = [Photo]()
     var images = [UIImage]()
     
@@ -39,7 +39,7 @@ class PhotoCollectionViewController: UICollectionViewController {
             case .success(let photos):
                 
                 for photo in photos{
-                    if photo.albumId == self.id {
+                    if photo.albumId == self.albumId {
                         self.photos.append(photo)
                     }
                 }

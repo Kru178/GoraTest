@@ -9,29 +9,11 @@ import UIKit
 
 class AlbumsTableVC: UITableViewController {
     
-//    let albums = ["1", "2", "3"]
-    
     var id: Int!
     var albums = [Album]()
     
-//    init(username: String ,id: Int) {
-//        super.init(nibName: nil, bundle: nil)
-//        self.id = id
-//        title = username
-//    }
-//
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         getAlbums()
     }
@@ -56,11 +38,11 @@ class AlbumsTableVC: UITableViewController {
                 print("albums for user: \(self.albums.count)")
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    print(self.albums)
                 }
                 
             case .failure(let error):
                 print(error.localizedDescription)
-//                present alert
             }
             
         }
@@ -69,12 +51,10 @@ class AlbumsTableVC: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return albums.count
     }
 
@@ -90,12 +70,13 @@ class AlbumsTableVC: UITableViewController {
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        pushPhotosVC(title: albums[indexPath.row].title)
+        pushPhotosVC(albumId: albums[indexPath.row].id)
     }
     
-    func pushPhotosVC(title: String) {
+    func pushPhotosVC(albumId: Int) {
         let vc = storyboard?.instantiateViewController(identifier: "photosVC") as? PhotoCollectionViewController
-        vc?.id = self.id
+        vc?.albumId = albumId
+        print("id passing: \(albumId)")
         show(vc!, sender: nil)
     }
 
