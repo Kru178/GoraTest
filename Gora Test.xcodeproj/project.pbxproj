@@ -53,6 +53,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7860D14A25DD3EDB00BA0689 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				7883126A25DAA76000934CBB /* GError.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		7860D14B25DD3EFC00BA0689 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7883126125DAA51F00934CBB /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		7860D14D25DD3F2600BA0689 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7883126425DAA5E400934CBB /* User.swift */,
+				7883126725DAA5F000934CBB /* Album.swift */,
+				7883127425DAB5F600934CBB /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7860D15025DD3F6600BA0689 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				7883125D25DA9F4C00934CBB /* UsersTableVC.swift */,
+				7883126F25DAAC9C00934CBB /* AlbumsTableVC.swift */,
+				786EC50225DAFD9100DC66CA /* PhotoCollectionViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		7860D15225DD3F8200BA0689 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				786EC50525DAFE8100DC66CA /* CustomCollectionViewCell.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		7860D15425DD3FB300BA0689 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				7883123425DA9C4500934CBB /* AppDelegate.swift */,
+				7883123625DA9C4500934CBB /* SceneDelegate.swift */,
+				7883124F25DA9DD200934CBB /* Main.storyboard */,
+				7883123D25DA9C4900934CBB /* Assets.xcassets */,
+				7883123F25DA9C4900934CBB /* LaunchScreen.storyboard */,
+				7883124225DA9C4900934CBB /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		7883122825DA9C4500934CBB = {
 			isa = PBXGroup;
 			children = (
@@ -72,21 +129,12 @@
 		7883123325DA9C4500934CBB /* Gora Test */ = {
 			isa = PBXGroup;
 			children = (
-				7883123425DA9C4500934CBB /* AppDelegate.swift */,
-				7883123625DA9C4500934CBB /* SceneDelegate.swift */,
-				7883124F25DA9DD200934CBB /* Main.storyboard */,
-				786EC50525DAFE8100DC66CA /* CustomCollectionViewCell.swift */,
-				786EC50225DAFD9100DC66CA /* PhotoCollectionViewController.swift */,
-				7883125D25DA9F4C00934CBB /* UsersTableVC.swift */,
-				7883126F25DAAC9C00934CBB /* AlbumsTableVC.swift */,
-				7883126125DAA51F00934CBB /* NetworkManager.swift */,
-				7883126A25DAA76000934CBB /* GError.swift */,
-				7883126425DAA5E400934CBB /* User.swift */,
-				7883126725DAA5F000934CBB /* Album.swift */,
-				7883127425DAB5F600934CBB /* Photo.swift */,
-				7883123D25DA9C4900934CBB /* Assets.xcassets */,
-				7883123F25DA9C4900934CBB /* LaunchScreen.storyboard */,
-				7883124225DA9C4900934CBB /* Info.plist */,
+				7860D14A25DD3EDB00BA0689 /* Utility */,
+				7860D14B25DD3EFC00BA0689 /* Managers */,
+				7860D14D25DD3F2600BA0689 /* Model */,
+				7860D15225DD3F8200BA0689 /* CustomViews */,
+				7860D15025DD3F6600BA0689 /* Screens */,
+				7860D15425DD3FB300BA0689 /* Support */,
 			);
 			path = "Gora Test";
 			sourceTree = "<group>";
@@ -312,7 +360,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27ZNNP8X2D;
-				INFOPLIST_FILE = "Gora Test/Info.plist";
+				INFOPLIST_FILE = "/Users/kru/Projects/Gora Test/Gora Test/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -331,7 +379,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27ZNNP8X2D;
-				INFOPLIST_FILE = "Gora Test/Info.plist";
+				INFOPLIST_FILE = "/Users/kru/Projects/Gora Test/Gora Test/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

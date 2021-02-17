@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct Album: Codable {
   
     var userId: Int

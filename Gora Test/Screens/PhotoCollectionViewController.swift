@@ -29,11 +29,8 @@ class PhotoCollectionViewController: UICollectionViewController {
     }
     
     func getPhotos() {
-        
         NetworkManager.shared.getPhotos { [weak self] result in
-            
             guard let self = self else { return }
-            //            self.dismissLoadingView()
             
             switch result {
             case .success(let photos):
@@ -43,20 +40,15 @@ class PhotoCollectionViewController: UICollectionViewController {
                         self.photos.append(photo)
                     }
                 }
-                print("photos in album: \(self.photos.count)")
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
                 
-                
             case .failure(let error):
                 print(error.localizedDescription)
-            //                present alert
             }
         }
-        
     }
-    
     
     // MARK: UICollectionViewDataSource
     
@@ -64,15 +56,13 @@ class PhotoCollectionViewController: UICollectionViewController {
         return 1
     }
     
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
     }
     
-    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustomCollectionViewCell
-   
+        
         cell.loadImageFrom(url: photos[indexPath.item].url)
         cell.label.text = photos[indexPath.item].title
         
@@ -82,13 +72,12 @@ class PhotoCollectionViewController: UICollectionViewController {
 
 
 extension PhotoCollectionViewController: UICollectionViewDelegateFlowLayout {
-    // 1
+
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
         sizeForItemAt indexPath: IndexPath
     ) -> CGSize {
-        // 2
         let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
         let availableWidth = view.frame.width - paddingSpace
         let widthPerItem = availableWidth / itemsPerRow
@@ -96,7 +85,6 @@ extension PhotoCollectionViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: widthPerItem, height: widthPerItem + 50)
     }
     
-    // 3
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
@@ -105,7 +93,6 @@ extension PhotoCollectionViewController: UICollectionViewDelegateFlowLayout {
         return sectionInsets
     }
     
-    // 4
     func collectionView(
         _ collectionView: UICollectionView,
         layout collectionViewLayout: UICollectionViewLayout,
