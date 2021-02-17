@@ -84,13 +84,11 @@ class NetworkManager {
                 completed(.failure(.invalidData))
             }
         }
-        
         task.resume()
     }
     
     
     func getPhotos(completed: @escaping (Result<[Photo], GError>) -> Void) {
-        
         let endpoint = baseUrl + "/photos"
         
         guard let url = URL(string: endpoint) else {

@@ -37,10 +37,8 @@ class CustomCollectionViewCell: UICollectionViewCell {
             guard let self = self else { return }
             DispatchQueue.main.async {
                 self.activityIndicator.stopAnimating()
-                UIView.animate(withDuration: 1.0) {
-                    self.imageView.image = image
-                    self.loadingView.isHidden = true
-                }
+                self.imageView.image = image
+                self.loadingView.isHidden = true
             }
         }
     }
