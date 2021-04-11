@@ -58,14 +58,14 @@ class UsersTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        pushAlbumsVC(title: users[indexPath.row].name, id: users[indexPath.row].id)
+        pushPhotosVC(title: users[indexPath.row].name, id: users[indexPath.row].id)
     }
     
-    func pushAlbumsVC(title: String, id: Int) {
-        let vc = storyboard?.instantiateViewController(identifier: "albumsVC") as? AlbumsTableVC
+    func pushPhotosVC(title: String, id: Int) {
+        let vc = storyboard?.instantiateViewController(identifier: "photosVC") as? PhotoCollectionViewController
         
         guard let destinationVC = vc else { return }
-        destinationVC.id = id
+        destinationVC.userId = id
         destinationVC.title = title
         
         show(destinationVC, sender: nil)

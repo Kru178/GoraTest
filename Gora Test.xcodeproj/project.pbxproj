@@ -19,7 +19,6 @@
 		7883126525DAA5E400934CBB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7883126425DAA5E400934CBB /* User.swift */; };
 		7883126825DAA5F000934CBB /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7883126725DAA5F000934CBB /* Album.swift */; };
 		7883126B25DAA76000934CBB /* GError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7883126A25DAA76000934CBB /* GError.swift */; };
-		7883127025DAAC9C00934CBB /* AlbumsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7883126F25DAAC9C00934CBB /* AlbumsTableVC.swift */; };
 		7883127525DAB5F600934CBB /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7883127425DAB5F600934CBB /* Photo.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +37,6 @@
 		7883126425DAA5E400934CBB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7883126725DAA5F000934CBB /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		7883126A25DAA76000934CBB /* GError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GError.swift; sourceTree = "<group>"; };
-		7883126F25DAAC9C00934CBB /* AlbumsTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsTableVC.swift; sourceTree = "<group>"; };
 		7883127425DAB5F600934CBB /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				7883125D25DA9F4C00934CBB /* UsersTableVC.swift */,
-				7883126F25DAAC9C00934CBB /* AlbumsTableVC.swift */,
 				786EC50225DAFD9100DC66CA /* PhotoCollectionViewController.swift */,
 			);
 			path = Screens;
@@ -209,7 +206,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7883127025DAAC9C00934CBB /* AlbumsTableVC.swift in Sources */,
 				7883126225DAA51F00934CBB /* NetworkManager.swift in Sources */,
 				7883125E25DA9F4C00934CBB /* UsersTableVC.swift in Sources */,
 				7883127525DAB5F600934CBB /* Photo.swift in Sources */,

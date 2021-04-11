@@ -11,7 +11,8 @@ private let reuseIdentifier = "cell"
 
 class PhotoCollectionViewController: UICollectionViewController {
     
-    var albumId: Int?
+    var userId : Int?
+    var albumId: [Int] = []
     var photos = [Photo]()
     var images = [UIImage]()
     
@@ -25,21 +26,36 @@ class PhotoCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getPhotos()
+        getAlbums()
     }
     
-    func getPhotos() {
-        NetworkManager.shared.getPhotos { [weak self] result in
+    func getAlbums() {
+
+        guard let id = userId else {return}
+        NetworkManager.shared.getAlbums(for: id) { (result) in
+            
+            switch result {
+            case .success(let albums):
+                for i in 0..<albums.count {
+                    self.albumId.append(albums[i].id)
+                }
+                self.getPhotos(for: self.albumId)
+            case .failure(let error):
+            print(error.localizedDescription)
+            }
+        }
+        
+    }
+    
+    func getPhotos(for idArray: [Int]) {
+        NetworkManager.shared.getPhotos(for: idArray) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let photos):
                 
-                for photo in photos{
-                    if photo.albumId == self.albumId {
-                        self.photos.append(photo)
-                    }
-                }
+                        self.photos = photos
+
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }

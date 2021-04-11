@@ -51,8 +51,8 @@ class NetworkManager {
     }
     
     
-    func getAlbums(completed: @escaping (Result<[Album], GError>) -> Void) {
-        let endpoint = baseUrl + "/albums"
+    func getAlbums(for userId: Int, completed: @escaping (Result<[Album], GError>) -> Void) {
+        let endpoint = baseUrl + "/users/" + "\(userId)" + "/albums"
         
         guard let url = URL(string: endpoint) else {
             completed(.failure(.invalidURL))
@@ -88,8 +88,12 @@ class NetworkManager {
     }
     
     
-    func getPhotos(completed: @escaping (Result<[Photo], GError>) -> Void) {
-        let endpoint = baseUrl + "/photos"
+    func getPhotos(for albumId: [Int], completed: @escaping (Result<[Photo], GError>) -> Void) {
+        
+        var photosArray : [Photo] = []
+        
+        for i in 0..<albumId.count {
+        let endpoint = baseUrl + "/photos" + "?albumId=\(albumId[i])"
         
         guard let url = URL(string: endpoint) else {
             completed(.failure(.invalidURL))
@@ -116,12 +120,16 @@ class NetworkManager {
             do {
                 let decoder = JSONDecoder()
                 let photos = try decoder.decode([Photo].self, from: data)
-                completed(.success(photos))
+                photosArray += photos
+                print("array: \(photosArray.count)")
+                completed(.success(photosArray))
             } catch {
                 completed(.failure(.invalidData))
             }
         }
         task.resume()
+        }
+        
     }
     
     

@@ -37,34 +37,6 @@
             </objects>
             <point key="canvasLocation" x="979.71014492753636" y="135.9375"/>
         </scene>
-        <!--Albums TableVC-->
-        <scene sceneID="RDr-xF-QVe">
-            <objects>
-                <tableViewController storyboardIdentifier="albumsVC" id="sRv-QP-dd4" customClass="AlbumsTableVC" customModule="Gora_Test" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JLS-zA-tMG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="albumCell" id="Ndu-4s-K4l">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ndu-4s-K4l" id="aN7-yF-ZQX">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="sRv-QP-dd4" id="hJg-xM-tHf"/>
-                            <outlet property="delegate" destination="sRv-QP-dd4" id="6PZ-MW-kda"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aqU-KX-zJi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1918" y="155"/>
-        </scene>
         <!--Photo Collection View Controller-->
         <scene sceneID="Bcd-iE-Kst">
             <objects>
@@ -149,7 +121,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHv-CM-Qic" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2830.434782608696" y="154.6875"/>
+            <point key="canvasLocation" x="1888" y="136"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vxz-jd-bPu">
