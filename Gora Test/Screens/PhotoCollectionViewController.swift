@@ -12,7 +12,7 @@ private let reuseIdentifier = "cell"
 class PhotoCollectionViewController: UICollectionViewController {
     
     var userId : Int?
-    var albumId: [Int] = []
+    var albums = ""
     var photos = [Photo]()
     var images = [UIImage]()
     
@@ -37,9 +37,11 @@ class PhotoCollectionViewController: UICollectionViewController {
             switch result {
             case .success(let albums):
                 for i in 0..<albums.count {
-                    self.albumId.append(albums[i].id)
+                    self.albums += "albumId=\(albums[i].id)&"
                 }
-                self.getPhotos(for: self.albumId)
+                self.albums.removeLast()
+                print(self.albums)
+                self.getPhotos(for: self.albums)
             case .failure(let error):
             print(error.localizedDescription)
             }
@@ -47,8 +49,9 @@ class PhotoCollectionViewController: UICollectionViewController {
         
     }
     
-    func getPhotos(for idArray: [Int]) {
-        NetworkManager.shared.getPhotos(for: idArray) { [weak self] result in
+    func getPhotos(for albums: String) {
+        
+        NetworkManager.shared.getPhotos(for: albums) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
